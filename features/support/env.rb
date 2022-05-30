@@ -4,6 +4,12 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
 
+#project Settings
+ENV['PUSERStart']="coreteam@gmail.com"
+ENV['title']="Proyecto de prueba"
+ENV['description']="Proyecto automatizado"
+ENV['Edittitle']="Proyecto de prueba editado"
+ENV['Editdescription']="Proyecto automatizado editado"
 #Login Settings
 ENV['USERStart']="voluntario@gmail.com"
 ENV['PSWStart']="123456"
