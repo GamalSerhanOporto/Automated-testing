@@ -1,9 +1,4 @@
 
-Given(/^I enter my core user email and password$/) do
-  fill_in 'email', :with => ENV['COREUSERStart']
-  fill_in 'password', :with => ENV['PSWStart']
-end
-
 And(/^I navigate to events$/) do
   visit('https://testing-start.web.app/eventos')
 end

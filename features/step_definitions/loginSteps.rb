@@ -4,6 +4,11 @@ Given(/^I am on the StartAmericasTogetherHomepage$/) do
 
 end
 
+Given(/^I enter my core user email and password$/) do
+  fill_in 'email', :with => ENV['COREUSERStart']
+  fill_in 'password', :with => ENV['PSWStart']
+end
+
 Given(/^I enter my email and password$/) do
     fill_in 'email', :with => ENV['USERStart']
     fill_in 'password', :with => ENV['PSWStart']

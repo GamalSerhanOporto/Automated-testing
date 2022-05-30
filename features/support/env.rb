@@ -6,6 +6,7 @@ require 'capybara-screenshot/cucumber'
 
 #Login Settings
 ENV['USERStart']="voluntario@gmail.com"
+ENV['COREUSERStart']="coreteam@gmail.com"
 ENV['PSWStart']="123456"
 ENV['IncorrectPSWStart']="1234sadf56"
 
