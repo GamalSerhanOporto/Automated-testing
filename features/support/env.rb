@@ -4,10 +4,19 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
 
-#PTravel Settings
+#Login Settings
 ENV['USERStart']="voluntario@gmail.com"
 ENV['PSWStart']="123456"
 ENV['IncorrectPSWStart']="1234sadf56"
+
+#Register Settings
+ENV['name']="Jaimen"
+ENV['fname']="Herbas"
+ENV['email']="jaimensoherbas@gmail.com"
+ENV['password']="jaime123"
+ENV['phone']="76909029"
+
+
 
 Capybara.default_driver = :selenium
 
