@@ -106,11 +106,6 @@ Given('I press the "Dejar de participar" button in an event') do
   find(:css,css).click
 end
 
-Given('I press the "Dejar de participar" button in an event') do 
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)'
-  find(:css,css).click
-end
-
 Given('I press the "Eliminar" button') do 
   css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > div > button'
   find(:css,css).click
