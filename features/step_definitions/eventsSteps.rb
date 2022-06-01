@@ -53,14 +53,18 @@ And(/^I press the "Editar" button$/) do
   find(:css,css).click
 end
 
-And('I enter the new event name {string}') do |string|
-  css = '#ModalFormEditEvento > div > form > div:nth-child(1) > div > input'
-  find(:css, css).set(string)
-end
-
-And('I enter the new event description {string}') do |string|
-  css = '#filled-multiline-flexible'
-  find(:css, css).set(string)
+And('I enter the new event name and descripton as shown below') do |table|
+  data = table.rows_hash
+  cssName = '#ModalFormEditEvento > div > form > div:nth-child(1) > div > input'
+  cssDescription = '#filled-multiline-flexible'
+  data.each_pair do |key, value|
+    case key
+    when "Name:"
+      find(:css, cssName).set(value)
+    when "Description:"
+      find(:css, cssDescription).set(value)
+    end
+  end
 end
 
 When('I press the "Guardar Cambios" button') do
