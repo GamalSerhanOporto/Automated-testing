@@ -17,3 +17,8 @@ end
 Then('The event {string} changes to {string}') do |string, string2|
     expect(page).to have_content(string2)
 end
+
+#TEXT NOT SHOWN
+And(/^The "([^"]*)" text is not shown$/) do |text|
+    expect(page).not_to have_content(text)
+end
