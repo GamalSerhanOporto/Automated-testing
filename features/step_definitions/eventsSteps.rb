@@ -105,3 +105,18 @@ Given('I press the "Dejar de participar" button in an event') do
   css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)'
   find(:css,css).click
 end
+
+Given('I press the "Dejar de participar" button in an event') do 
+  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)'
+  find(:css,css).click
+end
+
+Given('I press the "Eliminar" button') do 
+  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > div > button'
+  find(:css,css).click
+end
+
+Given('I press the "Confirmar" button') do 
+  css = 'body > div.MuiModal-root.MuiDialog-root.css-126xj0f > div.MuiDialog-container.MuiDialog-scrollPaper.css-ekeie0 > div > div.MuiDialogActions-root.MuiDialogActions-spacing.css-14b29qc > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-1hw9j7s'
+  find(:css,css).click
+end

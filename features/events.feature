@@ -61,8 +61,8 @@ Feature: Start Americas Create Event
 		And I press the eventos button
 		And I press the "Crear Evento" button
 		And I enter the name and date as shown below
-			| Name: | Created By Automated Test |
-			| Date: | 22/12/2022                |
+			| Name: | Created By Automated Testing |
+			| Date: | 22/12/2022                   |
 		When I press the "Guardar Evento" button
 		Then the "Evento Guardado" message is shown
 		And the "Created By Automated Test" event is shown
@@ -89,4 +89,11 @@ Feature: Start Americas Create Event
 		And the event information is shown
 		And The "Core Team" text is not shown
 
-
+	Scenario: Delete an event
+		Given I am on the StartAmericasTogetherHomepage
+		And I enter my core user email and password
+		And I press the sub button
+		And I press the eventos button
+		And I press the "Eliminar" button
+		When I press the "Confirmar" button
+		Then The "Edited By Automated Test" text is not shown
