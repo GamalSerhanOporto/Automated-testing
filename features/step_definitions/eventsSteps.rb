@@ -67,7 +67,36 @@ And('I enter the new event name and descripton as shown below') do |table|
   end
 end
 
+And('I enter the name and date as shown below') do |table|
+  data = table.rows_hash
+  cssName = '#ModalFormCrearEvento > div > form > div.MuiFormControl-root.MuiTextField-root.nombreEventoCrear.textInput.css-i44wyl > div > input'
+  cssDate = '#ModalFormCrearEvento > div > form > div.MuiFormControl-root.MuiTextField-root.FechaEventoCrear.textInput.css-i44wyl > div > input'
+  data.each_pair do |key, value|
+    case key
+    when "Name:"
+      find(:css, cssName).set(value)
+    when "Date:"
+      find(:css, cssDate).set(value)
+    end
+  end
+end
+
 When('I press the "Guardar Cambios" button') do
   xpath = '//*[@id="ModalFormEditEvento"]/div/form/div[11]/button[1]'
   find(:xpath,xpath).click
+end
+
+When('I press the "Crear Evento" button') do
+  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div:nth-child(1) > div.Menu-Bar-Evento > div.header-botones-eventos > button:nth-child(1)'
+  find(:css,css).click
+end
+
+
+Then('the {string} event is shown') do |string|
+  expect(page).to have_content(string)
+end
+
+Given('I press the "Participar" button in an event') do 
+  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)'
+  find(:css,css).click
 end
