@@ -67,7 +67,16 @@ Feature: Start Americas Create Event
         Then the "Evento Guardado" message is shown
         And the "Created By Automated Test" event is shown
 
-
+    Scenario: Participate in an event
+        Given I am on the StartAmericasTogetherHomepage
+        And I enter my core user email and password
+        And I press the sub button
+        And I press the eventos button
+        When I press the "Participar" button in an event
+        Then the "Tu participación en el evento ha sido registrada" message is shown
+        And I press the "Detalles" button
+		And the event information is shown
+        And The "Core Team" text is shown
 
 
 
