@@ -47,3 +47,23 @@ end
 Then('The past events are shown') do
   expect(page).to have_selector(:css,"#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body")
 end
+
+And(/^I press the "Editar" button$/) do
+  css = '#root > div:nth-child(2) > div:nth-child(2) > div > button'
+  find(:css,css).click
+end
+
+And('I enter the new event name {string}') do |string|
+  css = '#ModalFormEditEvento > div > form > div:nth-child(1) > div > input'
+  find(:css, css).set(string)
+end
+
+And('I enter the new event description {string}') do |string|
+  css = '#filled-multiline-flexible'
+  find(:css, css).set(string)
+end
+
+When('I press the "Guardar Cambios" button') do
+  xpath = '//*[@id="ModalFormEditEvento"]/div/form/div[11]/button[1]'
+  find(:xpath,xpath).click
+end

@@ -38,5 +38,24 @@ Feature: Start Americas Create Event
 		Then The "EVENTOS PASADOS" text is shown
 		And The past events are shown
 
+		Scenario: Edit an events information
+		Given I am on the StartAmericasTogetherHomepage
+		And I enter my core user email and password
+		And I press the sub button
+		And I press the eventos button
+		And I press the "Detalles" button
+		And the event information is shown
+		And I press the "Editar" button
+		And I enter the new event name "Automated Test Change"
+		And I enter the new event description "Automated Test Change"
+		When I press the "Guardar Cambios" button
+		Then the "Evento Actualizado" message is shown
+		And The event "description" changes to "Automated Test Change"
+		And The event "name" changes to "Automated Test Change"
+
+
+
+
+
 
 
