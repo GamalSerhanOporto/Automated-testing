@@ -36,11 +36,6 @@ Then(/^the "tus proximos eventos" screen is shown$/) do
     
   end
 
-  Then(/^the VV user is shown$/) do
-    expect(page).to have_content("VV")
-    puts find(:xpath,'/html/body/div/div[2]/header/div[1]/div[3]/div/div/span[1]').text
-  end
-
   Then(/^the "Correo o contraseña inválidos" message is shown$/) do
     expect(page).to have_content("Correo o contraseña inválidos.")
     puts find(:xpath,'  /html/body/div/div[2]/div[1]/div/div[2]/div[3]/div/div/div[2]').text
