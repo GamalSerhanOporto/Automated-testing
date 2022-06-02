@@ -3,14 +3,19 @@ Feature: Start Americas login
   As a registered user
   I want to test the login 
 
-  Scenario: Login a user on site SUT      
-	Given I am on the StartAmericasTogetherHomepage
-	And I enter my email and password
-	When I press the sub button
-    Then the "VV" user profile is shown
+  Background:
+    Given I am on the StartAmericasTogetherHomepage
 
-     Scenario: Login a user on site  SUT       
-	Given I am on the StartAmericasTogetherHomepage
-	And I enter my email and an incorrect password
+  Scenario: Login the user voluntatatio on site SUT      
+	Given I enter my user email and password as listed below
+  | Email:           | voluntario@gmail.com  |
+  | Password:        | 123456                |
 	When I press the sub button
-    Then the "Correo o contraseña inválidos" message is shown
+  Then the "VV" user profile is shown
+
+  Scenario: Login a user with invalid password on site SUT       
+	Given I enter my user email and password as listed below
+  | Email:           | voluntario@gmail.com  |
+  | Password:        | 123456x                |
+	When I press the sub button
+  Then the "Correo o contraseña inválidos" message is shown
