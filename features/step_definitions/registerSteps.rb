@@ -4,28 +4,42 @@ Given(/^I am on the StartAmericasTogetherRegistersPage$/) do
 
 end
 
-Given(/^I enter name and lastname$/) do
-    fill_in 'username', :with => ENV['name']
-    fill_in 'lastname', :with => ENV['fname']
-  end
+def random_string(length=6)
+  chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ0123456789'
+  string = ''
+  length.times { string << chars[rand(chars.size)] }
+  string
+end
 
-Given(/^I enter my email and my desired password twice$/) do
-    fill_in 'email', :with => ENV['email']
-    fill_in 'password', :with => ENV['password']
-    fill_in 'confirmPassword', :with => ENV['password']
+And('I fill the register fields as shown below') do |table|
+  data = table.rows_hash
+  random_string = random_string()
+  random_email = "auto#{random_string}@test.qa"
+  data.each_pair do |key, value|
+    case key
+    when "Name:"
+      fill_in 'username', :with => value
+    when "Lastname:"
+      fill_in 'lastname', :with => value
+    when "Email:"
+      fill_in 'email', :with => random_email
+    when "EmailFail:"
+      fill_in 'email', :with => value
+    when "Phone:"
+      fill_in 'phone', :with => value
+    when "Password:"
+      fill_in 'password', :with => value
+    when "Confirm password:"
+      fill_in 'confirmPassword', :with => value
+    end
   end
+end
 
-  Given(/^I enter my phone number$/) do
-    fill_in 'phone', :with => ENV['phone']
-    
-  end
+And(/^the submit button should be disabled$/) do
+  expect(page).to have_button(type: "submit", disabled: true)
+end
 
   When(/^I press the submit button$/) do
     xpath = '/html/body/div/div[2]/div[1]/div/div/div[2]/div[3]/form/div[7]/button'
     find(:xpath, xpath).click 
-  end
-
-  Then(/^the "Se ha enviado un correo de confirmación al email" message is shown$/) do
-    expect(page).to have_content("Se ha enviado un correo de confirmación al email")
-    puts find(:xpath,'/html/body/div/div[2]/div[1]/div/div/div[3]/div/div/div[2]').text
   end
