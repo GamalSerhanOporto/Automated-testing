@@ -102,9 +102,9 @@ xpath = '/html/body/div[1]/div[2]/header/div[2]/div/button[3]'
 find(:xpath,xpath).click
 #Delete Pending Event
 click_button('Eliminar_TC-G3-PENDING-EVENT')
+sleep(2)
 click_button('eliminareventoTC-G3-PENDING-EVENT')
-
-sleep(5)
+sleep(3)
 end
 
 After '@DeleteParticipatingEvent' do
@@ -121,9 +121,9 @@ xpath = '/html/body/div[1]/div[2]/header/div[2]/div/button[3]'
 find(:xpath,xpath).click
 #Delete Participating Event
 click_button('Eliminar_TC-G3-PENDING-SP')
+sleep(2)
 click_button('eliminareventoTC-G3-PENDING-SP')
-
-sleep(5)
+sleep(3)
 end
 
 After '@DeletePastEvent' do
@@ -143,8 +143,9 @@ css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.contai
 find(:css,css).click
 #Delete Past Event
 click_button('Eliminar_TC-G3-PAST-EVENT')
+sleep(2)
 click_button('eliminareventoTC-G3-PAST-EVENT')
-sleep(5)
+sleep(3)
 end
 
 After '@DeleteEventoNuevo' do
@@ -161,7 +162,7 @@ xpath = '/html/body/div[1]/div[2]/header/div[2]/div/button[3]'
 find(:xpath,xpath).click
 #Delete Event
 click_button('Eliminar_EventoNuevo')
+sleep(2)
 click_button('eliminareventoEventoNuevo')
-
-sleep(5)
+sleep(3)
 end
