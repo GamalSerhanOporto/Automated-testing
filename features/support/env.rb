@@ -10,6 +10,13 @@ ENV['COREUSERStart']="coreteam@gmail.com"
 ENV['PSWStart']="123456"
 ENV['IncorrectPSWStart']="1234sadf56"
 
+#project Settings
+ENV['PUSERStart']="coreteam@gmail.com"
+ENV['title']="Proyecto de prueba"
+ENV['description']="Proyecto automatizado"
+ENV['Edittitle']="Proyecto de prueba editado"
+ENV['Editdescription']="Proyecto automatizado editado"
+
 #Register Settings
 ENV['name']="Jaimen"
 ENV['fname']="Herbas"
