@@ -4,8 +4,10 @@ Feature: Start Americas Create Project
 	I want to test registering an Project
 Background: 
     Given I am on the StartAmericasTogetherHomepage
-	And I enter my coreteam email and password
-	And I press the sub button
+		And I enter my user email and password as listed below
+			| Email:    | coreteam@gmail.com |
+			| Password: | 123456             |
+		And I press the sub button
     And I press the proyectos button
   
   Scenario:see event's categories 
