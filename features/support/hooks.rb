@@ -2,7 +2,6 @@ After do
   Capybara.current_session.driver.quit
 end
 
-
 Before '@maximize' do
 page.driver.browser.manage.window.maximize
 end
@@ -166,3 +165,22 @@ sleep(2)
 click_button('eliminareventoEventoNuevo')
 sleep(3)
 end
+
+  Before '@SetupUserCreation' do
+    #Open app
+    page.driver.browser.manage.window.maximize
+    visit('https://testing-start.web.app/register')
+    random_string = random_string()
+    random_email = "auto#{random_string}@test.qa"
+    #Register
+      fill_in 'username', :with => 'Jaimen'
+      fill_in 'lastname', :with => 'Herbas'
+      fill_in 'email', :with => random_email
+      fill_in 'phone', :with => '76768987'
+      fill_in 'password', :with => 'noelito1234'
+      fill_in 'confirmPassword', :with => 'noelito1234'
+      xpath = '/html/body/div/div[2]/div[1]/div/div/div[2]/div[3]/form/div[7]/button'
+      find(:xpath, xpath).click 
+    end
+
+    
