@@ -30,11 +30,6 @@ Then(/^the event information is shown$/) do
   expect(page).to have_content("Descripción:")
 end
 
-And(/^I press the "Detalles" button$/) do
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(2)'
-  find(:css,css).click
-end
-
 And(/^I press the eventos pasados button$/) do
   css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div:nth-child(1) > div.Menu-Bar-Evento > div.header-botones-eventos > button:nth-child(2)'
   find(:css,css).click
@@ -96,19 +91,20 @@ Then('the {string} event is shown') do |string|
   expect(page).to have_content(string)
 end
 
-Given('I press the "Participar" button in an event') do 
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)'
-  find(:css,css).click
-end
+Given('I press the {string} button in the {string} event') do |string, string2|
+  case string
+  when 'Dejar de participar'
+    button = 'DejarParticipar_'  
+  when 'Participar'
+    button = 'participar_'
+  when 'Detalles'
+    button = 'Detalles_'
+  when 'Eliminar'
+    button = 'Eliminar_'
 
-Given('I press the "Dejar de participar" button in an event') do 
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > button:nth-child(1)'
-  find(:css,css).click
-end
-
-Given('I press the "Eliminar" button') do 
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body > div:nth-child(1) > div > div.CardBody-Eventos.card-body > div > div > button'
-  find(:css,css).click
+  end
+  buttonName = button + string2
+  click_button(buttonName)
 end
 
 Given('I press the "Confirmar" button') do 
