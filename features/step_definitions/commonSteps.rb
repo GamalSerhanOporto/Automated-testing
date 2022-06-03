@@ -23,3 +23,13 @@ end
 And(/^The "([^"]*)" text is not shown$/) do |text|
     expect(page).not_to have_content(text)
 end
+
+#Verify event is shown
+Then('The event {string} is shown') do |string|
+    expect(page).to have_content(string)
+  end
+  
+#Verify event is shown
+Then('The event {string} is not shown') do |string|
+    expect(page).not_to have_content(string)
+end

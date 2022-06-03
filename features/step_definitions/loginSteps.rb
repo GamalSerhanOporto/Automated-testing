@@ -16,7 +16,19 @@ And('I enter my user email and password as listed below') do |table|
   end
 end
 
+  And(/^I press the user profile button$/) do
+    xpath = '/html/body/div/div[2]/header/div[1]/div[3]/div/div'
+    find(:xpath, xpath).click 
+  end
+
   When(/^I press the sub button$/) do
     xpath = '/html/body/div/div[2]/div[1]/div/div[2]/div[2]/div/form/div/button'
     find(:xpath, xpath).click 
   end
+
+  Then(/^I'm able to see the "Logout" button$/) do
+     find(:xpath, "/html/body/div[2]/div/button")
+  end
+
+
+ 

@@ -12,6 +12,9 @@ Feature: Start Americas login
   | Password:        | 123456                |
 	When I press the sub button
   Then the "VV" user profile is shown
+  And I press the user profile button
+  Then I'm able to see the "Logout" button
+
 
   Scenario: Login a user with invalid password on site SUT       
 	Given I enter my user email and password as listed below
