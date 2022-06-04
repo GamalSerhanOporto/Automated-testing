@@ -10,10 +10,10 @@ Background:
 		And I press the sub button
     And I press the proyectos button
   
-  Scenario:see event's categories 
+  Scenario: See projects's categories 
     Then The "MEDIO AMBIENTE" text is shown
 
-  Scenario: See events by category
+  Scenario: See projects by category
   When I press Medio Ambiente card
     Then The "Proyectos Medio Ambiente" text is shown
 
