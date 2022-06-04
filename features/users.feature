@@ -18,9 +18,9 @@ And I'm able to see at least one user in the table
 
 @SetupUserCreation
 Scenario: Login with a piviliged user and validate that using the 
-filter by lastname i can found that the first user has the lastname Aliss 
+filter by lastname i can found that the first user has the name "Jaimen" and lastname "Herbas".
 Given I click on the users section in the navbar
 When I press the criteria button
 And I filter by lastname
-And I search for the lastname "Aliss"
-Then The user "Noel Aliss" is shown
+And I search for the lastname "Herbas"
+Then The user "Jaimen Herbas" is shown

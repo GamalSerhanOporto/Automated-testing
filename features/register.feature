@@ -6,7 +6,7 @@ Feature: Start Americas Register
    Background:
     Given I am on the StartAmericasTogetherRegistersPage
 
-Scenario: Register on Start page with a valid fields        
+Scenario: Register on the Start page with all valid fields        
     Given I fill the register fields as shown below
     | Name:            | Jaimen                        |
 		| Lastname:        | Herbas                        |
@@ -17,7 +17,7 @@ Scenario: Register on Start page with a valid fields
 	When I press the submit button
 	Then the "Se ha enviado un correo de confirmación al email" message is shown
 
-  Scenario: Register on Start page with an invalid password        
+  Scenario: Register on the Start page with an invalid password        
     Given I fill the register fields as shown below
     | Name:            | Jaimen                        |
 		| Lastname:        | Herbas                        |
@@ -28,7 +28,7 @@ Scenario: Register on Start page with a valid fields
 	Then the "La contraseña debe tener mínimo 6 caracteres y 1 número" message is shown
   And the submit button should be disabled
 
-    Scenario: Register on Start page with an invalid mail        
+    Scenario: Register on the Start page with an invalid mail        
     Given I fill the register fields as shown below
     | Name:            | Jaimen                        |
 		| Lastname:        | Herbas                        |
@@ -39,7 +39,7 @@ Scenario: Register on Start page with a valid fields
 	Then the "Correo no válido" message is shown
   And the submit button should be disabled
 
-    Scenario: Register on Start page with an invalid password confirm        
+    Scenario: Register on the Start page with an invalid password confirm        
     Given I fill the register fields as shown below
     | Name:            | Jaimen                        |
 		| Lastname:        | Herbas                        |

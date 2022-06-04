@@ -6,7 +6,7 @@ Feature: Start Americas login
   Background:
     Given I am on the StartAmericasTogetherHomepage
 
-  Scenario: Login the user voluntatatio on site SUT      
+  Scenario: Login the user Voluntario on the Start's page      
 	Given I enter my user email and password as listed below
   | Email:           | voluntario@gmail.com  |
   | Password:        | 123456                |
@@ -16,7 +16,7 @@ Feature: Start Americas login
   Then I'm able to see the "Logout" button
 
 
-  Scenario: Login a user with invalid password on site SUT       
+  Scenario: Login the user Voluntario on the Start's page with invalid password     
 	Given I enter my user email and password as listed below
   | Email:           | voluntario@gmail.com  |
   | Password:        | 123456x                |
