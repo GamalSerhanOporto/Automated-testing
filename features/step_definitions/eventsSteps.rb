@@ -57,8 +57,8 @@ And('I enter the name and date as shown below') do |table|
 end
 
 When('I press the Guardar Cambios button') do
-  xpath = '//*[@id="ModalFormEditEvento"]/div/form/div[11]/button[1]'
-  find(:xpath,xpath).click
+  css = '#ModalFormEditEvento > div > form > div.CamposBotones > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.botonActualizar'
+  find(:css,css).click
 end
 
 Then('the {string} event is shown') do |string|
