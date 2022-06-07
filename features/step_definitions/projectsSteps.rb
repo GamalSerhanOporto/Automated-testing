@@ -8,8 +8,8 @@ Given('I enter my coreteam email and password') do
     find(:xpath, xpath).click 
   end
 Given('I press the "Crear Proyecto" button') do 
-    xpath = '/html/body/div/div[2]/div[1]/div/div[1]/div/div[2]/button'
-    find(:xpath, xpath).click 
+    css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.MuiBox-root.jss25 > div > div.MuiGrid-root.jss24.MuiGrid-item.MuiGrid-grid-xs-7.MuiGrid-grid-md-5 > button'
+    find(:css, css).click 
     
 end
   
@@ -35,8 +35,8 @@ end
   end
   
   When('I press Medio Ambiente card') do 
-    xpath = '/html/body/div/div[2]/div[1]/div/div[2]/div/div[1]'
-    find(:xpath, xpath).click 
+    css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.MuiContainer-root.jss26.MuiContainer-maxWidthLg > div > div:nth-child(1)'
+    find(:css, css).click 
   end
 
 
@@ -68,8 +68,8 @@ end
   end
   
   When('I select guardarcambios button') do
-    xpath = '/html/body/div[2]/div[3]/form/div[2]/div[10]/input'
-    find(:xpath, xpath).click
+    css = 'body > div:nth-child(6) > div.paper-crear > form > div:nth-child(3) > div.btn-crear-container > input'
+    find(:css, css).click
   end
   
   Then('I see the new name: Proyecto de prueba editado of project') do
