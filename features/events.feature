@@ -9,7 +9,7 @@ Feature: Start Americas Create Event
 			| Email:    | coreteam@gmail.com |
 			| Password: | 123456             |
 		And I press the sub button
-		And I press the eventos button
+		And I press the 'eventos' button
 
 	@SetupPendingEvent @DeletePendingEvent
 	Scenario: Participate in an event
@@ -29,7 +29,7 @@ Feature: Start Americas Create Event
 		Then The "Core Team" text is not shown
 
 	Scenario: Register an event without required fields
-		Given I press the "Crear eventos" button
+		Given I press the "Crear Evento" button
 		When I press the "Guardar Evento" button
 		Then the "Nombre del Evento o Fecha del Evento vacía" message is shown
 

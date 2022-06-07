@@ -1,8 +1,3 @@
-And(/^I press the eventos button$/) do
-  xpath = '/html/body/div[1]/div[2]/header/div[2]/div/button[3]'
-  find(:xpath,xpath).click
-end
-
 Then(/^the event information is shown$/) do
   expect(page).to have_content("Hora Inicio:")
   expect(page).to have_content("Hora Fin:")
