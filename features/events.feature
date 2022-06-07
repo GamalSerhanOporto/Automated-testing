@@ -56,11 +56,11 @@ Feature: Start Americas Create Event
 	Scenario: Edit an events information
 		Given I press the "Detalles" button in the "TC-G3-PENDING-EVENT" event
 		And the event information is shown
-		And I press the "Editar" button
+		And I press the Editar button
 		When I enter the new event name and descripton as shown below
 			| Name:        | Edited By Automated Test |
 			| Description: | Edited By Automated Test |
-		And I press the "Guardar Cambios" button
+		And I press the Guardar Cambios button
 		Then the "Evento Actualizado" message is shown
 		And The event "description" changes to "Edited By Automated Test"
 		And The event "name" changes to "Edited By Automated Test"
@@ -78,5 +78,5 @@ Feature: Start Americas Create Event
 	@SetupPendingEvent
 	Scenario: Delete an event
 		Given I press the "Eliminar" button in the "TC-G3-PENDING-EVENT" event
-		When I press the "Confirmar" button
+		When I press the "Confirmar" button in the "TC-G3-PENDING-EVENT" event
 		Then The event "TC-G3-PENDING-EVENT" is not shown

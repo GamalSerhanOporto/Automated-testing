@@ -1,21 +1,6 @@
-
-And(/^I navigate to events$/) do
-  visit('https://testing-start.web.app/eventos')
-end
-
 And(/^I press the eventos button$/) do
   xpath = '/html/body/div[1]/div[2]/header/div[2]/div/button[3]'
   find(:xpath,xpath).click
-end
-
-And(/^I press the "Guardar Evento" button$/) do
-  css = '#ModalFormCrearEvento > div > form > div.CamposBotones > button.botonCrear.btn.btn-secondary'
-  find(:css,css).click
-end
-
-When(/^I press the "Crear eventos" button/) do
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div:nth-child(1) > div.Menu-Bar-Evento > div.header-botones-eventos > button:nth-child(1)'
-  find(:css, css).click 
 end
 
 Then(/^the event information is shown$/) do
@@ -43,7 +28,7 @@ Then('The past events are shown') do
   expect(page).to have_selector(:css,"#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div.Container-Body")
 end
 
-And(/^I press the "Editar" button$/) do
+And(/^I press the Editar button$/) do
   css = '#root > div:nth-child(2) > div:nth-child(2) > div > button'
   find(:css,css).click
 end
@@ -76,16 +61,10 @@ And('I enter the name and date as shown below') do |table|
   end
 end
 
-When('I press the "Guardar Cambios" button') do
+When('I press the Guardar Cambios button') do
   xpath = '//*[@id="ModalFormEditEvento"]/div/form/div[11]/button[1]'
   find(:xpath,xpath).click
 end
-
-When('I press the "Crear Evento" button') do
-  css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div:nth-child(1) > div.Menu-Bar-Evento > div.header-botones-eventos > button:nth-child(1)'
-  find(:css,css).click
-end
-
 
 Then('the {string} event is shown') do |string|
   expect(page).to have_content(string)
@@ -101,13 +80,9 @@ Given('I press the {string} button in the {string} event') do |string, string2|
     button = 'Detalles_'
   when 'Eliminar'
     button = 'Eliminar_'
-
+  when 'Confirmar'
+    button='eliminarevento'
   end
   buttonName = button + string2
   click_button(buttonName)
-end
-
-Given('I press the "Confirmar" button') do 
-  css = 'body > div.MuiModal-root.MuiDialog-root.css-126xj0f > div.MuiDialog-container.MuiDialog-scrollPaper.css-ekeie0 > div > div.MuiDialogActions-root.MuiDialogActions-spacing.css-14b29qc > button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-1hw9j7s'
-  find(:css,css).click
 end

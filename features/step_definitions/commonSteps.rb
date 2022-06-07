@@ -33,3 +33,16 @@ Then('The event {string} is shown') do |string|
 Then('The event {string} is not shown') do |string|
     expect(page).not_to have_content(string)
 end
+
+#Press named button
+Given('I press the {string} button') do |string|
+    case string
+    when 'eventos'
+      button = 'eventos'  
+    when 'Crear Evento'
+      button = 'crear_evento'
+    when 'Guardar Evento'
+      button = 'GuardarEvento'
+    end
+    click_button(button)
+  end
