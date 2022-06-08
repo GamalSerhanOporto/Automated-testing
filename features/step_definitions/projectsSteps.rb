@@ -7,11 +7,7 @@ Given('I enter my coreteam email and password') do
     xpath = '/html/body/div[1]/div[2]/header/div[2]/div/button[2]'
     find(:xpath, xpath).click 
   end
-Given('I press the "Crear Proyecto" button') do 
-    css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.MuiBox-root.jss25 > div > div.MuiGrid-root.jss24.MuiGrid-item.MuiGrid-grid-xs-7.MuiGrid-grid-md-5 > button'
-    find(:css, css).click 
-    
-end
+
   
 
   
@@ -29,10 +25,7 @@ end
       end
     end
   end
-  Given('I press the Guardar Proyecto button') do 
-    xpath = '/html/body/div[2]/div[3]/form/div[2]/div[11]/input'
-    find(:xpath, xpath).click 
-  end
+
   
   When('I press Medio Ambiente card') do 
     css = '#root > div:nth-child(2) > div:nth-child(2) > div > div.MuiContainer-root.jss26.MuiContainer-maxWidthLg > div > div:nth-child(1)'
@@ -46,7 +39,7 @@ end
 
   
   When('I press unirme button') do
-    css = '#\35 8 > button'
+    css = '#\35 6 > button'
     find(:css,css).click
   end
 
@@ -77,20 +70,12 @@ end
   end
 
   When('I press Ver detalles') do
-    xpath = '/html/body/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/a'
+    xpath = '//*[@id="root"]/div[2]/div[1]/div/div[2]/div/div[3]/div[2]/div[2]/a'
     find(:xpath, xpath).click
     
-  end
-  When('I press the Eliminar evento button') do
-    
-    xpath = '/html/body/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/button'
-    find(:xpath, xpath).click
   end
   
-  When('I press the Confirmar eliminacion button') do
-    xpath = '/html/body/div[2]/div[3]/div/div[3]/button[1]'
-    find(:xpath, xpath).click
-  end
+  
   name='/html/body/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[1]/p[1]'
   Then('The Eliminated project text is not shown') do
     expect(page).not_to have_content(name)

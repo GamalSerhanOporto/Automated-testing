@@ -23,13 +23,13 @@ And I press the "Crear Proyecto" button
 And I enter the name and description as shown below
   | Name:        | Created By Automated Testing |
   | Description: | Created By Automated Testing |                   
-And I press the Guardar Proyecto button
+And I press the "Guardar Proyecto" button
 When I press Medio Ambiente card
 Then the "Created By Automated" Test project is shown
 
 Scenario: Register a project without required fields
 And I press the "Crear Proyecto" button
-And I press the Guardar Proyecto button
+And I press the "Guardar Proyecto" button
 Then the "Error: Campo required" message is shown
 
 Scenario: participate in a project   
@@ -47,8 +47,8 @@ Then I see the new name: Proyecto de prueba editado of project
 Scenario: Delete a project
 When I press Medio Ambiente card
 And I press Ver detalles
-And I press the Eliminar evento button
-When I press the Confirmar eliminacion button
+And I press the "Eliminar proyecto" button
+When I press the "Confirmar eliminacion" button
 When I press Medio Ambiente card
 Then The Eliminated project text is not shown
         

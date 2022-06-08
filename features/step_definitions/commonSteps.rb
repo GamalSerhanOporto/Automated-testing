@@ -43,6 +43,15 @@ Given('I press the {string} button') do |string|
       button = 'crear_evento'
     when 'Guardar Evento'
       button = 'GuardarEvento'
+    when 'Crear Proyecto'
+      button='crearProyecto'
+    when 'Guardar Proyecto'
+      button='crearProyecto1'
+    
+    when 'Eliminar proyecto'
+      button='eliminarproyecto'
+    when'Confirmar eliminacion'
+      button='eliminarproyecto1'
     end
     click_button(button)
   end
