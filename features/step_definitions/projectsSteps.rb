@@ -9,8 +9,6 @@ Given('I enter my coreteam email and password') do
   end
 
   
-
-  
   Given('I enter the name and description as shown below') do |table|
     data = table.rows_hash
     
@@ -46,9 +44,6 @@ Given('I enter my coreteam email and password') do
   Then('Participacion exitosa message is shown') do
     expect(page).to have_content("Participacion exitosa")
   end
-
-
-
   
   Given('I press the edit card') do
     xpath = '/html/body/div/div[2]/div[1]/div/div[2]/div/div[1]/div[2]/div[2]/button'
