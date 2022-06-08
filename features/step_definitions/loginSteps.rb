@@ -17,17 +17,17 @@ And('I enter my user email and password as listed below') do |table|
 end
 
   And(/^I press the user profile button$/) do
-    xpath = '/html/body/div/div[2]/header/div[1]/div[3]/div/div'
-    find(:xpath, xpath).click 
+    css = '#root > div:nth-child(2) > header > div.header-logo > div:nth-child(3) > div > div'
+    find(:css, css).click 
   end
 
   When(/^I press the sub button$/) do
-    xpath = '/html/body/div/div[2]/div[1]/div/div[2]/div[2]/div/form/div/button'
-    find(:xpath, xpath).click 
+    css = '#root > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.MuiGrid-root.jss13 > div > form > div > button > span.MuiButton-label'
+    find(:css, css).click 
   end
 
   Then(/^I'm able to see the "Logout" button$/) do
-     find(:xpath, "/html/body/div[2]/div/button")
+     find(:css, "body > div:nth-child(6) > div > button > span.MuiButton-label") 
   end
 
 
